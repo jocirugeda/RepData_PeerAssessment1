@@ -66,6 +66,7 @@ daily_median <- median(ds_by_day$sum_steps, na.rm = TRUE)
 
 
 sumarize_by_interval <- function(ds_input) {
+    
     # compute mean by same interval
     avg_by_time <- tapply(ds_input$steps, ds_input$interval, mean, na.rm = TRUE)
     # create data frame from vector
@@ -171,7 +172,7 @@ sort_new_ds <- new_ds[order(new_ds$date, new_ds$interval), ]
 
 ds_by_day <- sumarize_by_day(sort_new_ds)
 
-hist(ds_by_day$sum_steps, xlab = "total number of steps taken each day", main = " Histogram number of steps ( NA filled with interval mean")
+hist(ds_by_day$sum_steps, xlab = "total number of steps taken each day", main = " Histogram number of steps ( NA filled with interval mean)")
 ```
 
 ![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8.png) 
